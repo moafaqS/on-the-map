@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class AddNewLocationViewController: UIViewController , UITextFieldDelegate{
     
     @IBOutlet weak var locationLabel: UITextField!
@@ -68,34 +67,5 @@ class AddNewLocationViewController: UIViewController , UITextFieldDelegate{
             vc?.searchText = sender as! String
         }
     }
-    
-    
-    func findLocation(){
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = searchText
-        request.region = mapView.region
-        let search = MKLocalSearch(request: request)
-        search.start { (response, error) in
-            if error != nil{
-                
-                DispatchQueue.main.async{
-                    let alert = UIAlertController(title: "failure", message: "failed to find location", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                }
-                
-                
-            }else{
-                guard let response = response else {
-                    return
-                }
-                self.matchingItems = response.mapItems
-                self.dropPinZoomIn(placemark: response.mapItems[0].placemark)
-                
-            }
-            
-        }
-    }
-
     
 }
