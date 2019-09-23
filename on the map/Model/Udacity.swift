@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct LogInRequestBody : Codable{
+    let loginRequest : LoginRequest
+    
+    enum CodingKeys: String, CodingKey {
+        case loginRequest = "udacity"
+    }
+    
+}

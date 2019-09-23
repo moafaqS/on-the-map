@@ -8,23 +8,94 @@
 
 import UIKit
 
-class AddNewLocationViewController: UIViewController {
 
+class AddNewLocationViewController: UIViewController , UITextFieldDelegate{
+    
+    @IBOutlet weak var locationLabel: UITextField!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        locationLabel.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        enableActivity(enable: false)
     }
-    */
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.locationLabel.resignFirstResponder()
+        return true
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        locationLabel.text = ""
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func enableActivity(enable : Bool){
+        activityIndicator.isHidden = !enable
+        enable ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        
+    }
+    
+    @IBAction func findOnTheMap(_ sender: Any) {
+        enableActivity(enable: true)
+        
+        if locationLabel.text == ""{
+                enableActivity(enable: false)
+                let alert = UIAlertController(title: "Required field", message: "You must write a location", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            
+        }else{
+            enableActivity(enable: true)
+            performSegue(withIdentifier: "toNewLocation", sender: locationLabel.text)
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is NewLocationMapViewController
+        {
+            let vc = segue.destination as? NewLocationMapViewController
+            vc?.searchText = sender as! String
+        }
+    }
+    
+    
+    func findLocation(){
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = searchText
+        request.region = mapView.region
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if error != nil{
+                
+                DispatchQueue.main.async{
+                    let alert = UIAlertController(title: "failure", message: "failed to find location", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                }
+                
+                
+            }else{
+                guard let response = response else {
+                    return
+                }
+                self.matchingItems = response.mapItems
+                self.dropPinZoomIn(placemark: response.mapItems[0].placemark)
+                
+            }
+            
+        }
+    }
 
+    
 }

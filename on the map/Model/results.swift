@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct locationResults :Codable{
+    let results: [StudentInformation]
+    
+    enum CodingKeys: String, CodingKey {
+        case results
+    }
+ 
+}
