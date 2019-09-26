@@ -40,19 +40,16 @@ class MapViewController: UIViewController , MKMapViewDelegate{
     
    
     @IBAction func logout(_ sender: Any) {
+    DispatchQueue.main.async {
         API.logout { (done, error) in
             if done{
                 self.dismiss(animated: true, completion: nil)
             }else{
-                DispatchQueue.main.async {
                     let alert = UIAlertController(title: "failure", message: "The app failed to logout", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
                     self.present(alert, animated: true)
-                    
                 }
-               
             }
-            
         }
     }
         
@@ -65,6 +62,10 @@ extension MapViewController{
     func setTheMap(array : [StudentInformation]){
         let locations = array
         var annotations = [MKPointAnnotation]()
+        
+        // to avoid repetition of annotations
+        let allAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(allAnnotations)
         
         for dictionary in locations {
             

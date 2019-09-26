@@ -46,10 +46,13 @@ class NewLocationMapViewController: UIViewController, MKMapViewDelegate , UIText
                 
                 DispatchQueue.main.async{
                     let alert = UIAlertController(title: "failure", message: "failed to find location", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+               
+                    alert.addAction(UIAlertAction(title: "ok", style:.default, handler: { (UIAlertAction) in
+                        self.presentingViewController?.dismiss(animated: true, completion: nil)
+                        
+                    }))
                     self.present(alert, animated: true)
                 }
-                
                 
             }else{
                 guard let response = response else {
@@ -62,7 +65,8 @@ class NewLocationMapViewController: UIViewController, MKMapViewDelegate , UIText
             
         }
     }
-
+    
+    
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -70,7 +74,6 @@ class NewLocationMapViewController: UIViewController, MKMapViewDelegate , UIText
     @IBAction func submitPressed(_ sender: Any) {
      
         API.getUserData { (user, error) in
-            
             if user != nil{
                 API.postStudentLocation(firstName: user!.firstName, lastName: user!.lastName, latitude:(self.selectedPin?.coordinate.latitude)!, longitude: (self.selectedPin?.coordinate.longitude)!, mapString: self.searchText, mediaURL: self.linkToShare.text!, uniqueKey: API.Auth.accountId, completion: { (done, error) in
                     
@@ -89,6 +92,14 @@ class NewLocationMapViewController: UIViewController, MKMapViewDelegate , UIText
                     }
                     
                 })
+            }else{
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "failure", message: "The app failed to post new location", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    
+                }
+            }
             }
             
         }
@@ -96,7 +107,7 @@ class NewLocationMapViewController: UIViewController, MKMapViewDelegate , UIText
     }
     
     
-}
+
 
 
 extension NewLocationMapViewController {

@@ -100,7 +100,7 @@ class API {
     
     class func postStudentLocation(firstName: String, lastName: String, latitude: Double, longitude: Double, mapString: String, mediaURL: String , uniqueKey: String , completion : @escaping (Bool,Error?) -> Void) {
         
-        let location = PostStudentLocation(uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        let location = PostLocation(uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
         
 
         var request = URLRequest(url: Endpoints.postStudentLocation.url)

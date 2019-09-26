@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2l-XL-Wk2">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -137,7 +137,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-Ie-5Pa">
-                                                    <rect key="frame" x="10" y="5" width="394" height="76"/>
+                                                    <rect key="frame" x="10" y="5" width="354" height="76"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ht5-Ye-01b">
                                                             <rect key="frame" x="20" y="18" width="40" height="40"/>
@@ -147,7 +147,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moafaq simbawa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gz-03-MfK">
-                                                            <rect key="frame" x="80" y="6.5" width="306" height="63"/>
+                                                            <rect key="frame" x="80" y="6.5" width="266" height="63"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="63" id="7eF-SO-riS"/>
                                                             </constraints>
@@ -211,7 +211,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ekD-uF-oOY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-map-marker-50" id="sIl-xO-MHb">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-list-50" id="sIl-xO-MHb">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
                     </tabBarItem>
                     <connections>
@@ -237,18 +237,18 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="On the map" id="Ypy-C8-rDP">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="svn-gF-7av">
+                                        <barButtonItem key="leftBarButtonItem" title="logout" id="n6W-WM-MnC">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="logout:" destination="R54-02-dZv" id="v1q-l3-HPE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="svn-gF-7av">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="T2l-XL-Wk2" kind="popoverPresentation" popoverAnchorBarButtonItem="svn-gF-7av" id="hkY-Ts-8dg">
                                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                 </segue>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="logout" id="n6W-WM-MnC">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="logout:" destination="R54-02-dZv" id="v1q-l3-HPE"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -289,7 +289,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i3p-Eq-USd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-list-50" id="NpG-TG-90j">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-map-marker-50" id="NpG-TG-90j">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
                     </tabBarItem>
                     <connections>
@@ -387,11 +387,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oit-sh-A5A">
-                                <rect key="frame" x="84.5" y="557" width="245" height="62"/>
+                                <rect key="frame" x="107" y="537" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.57647058819999997" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="22G-z0-xAe"/>
-                                    <constraint firstAttribute="width" constant="245" id="lm3-4j-wUO"/>
+                                    <constraint firstAttribute="height" constant="50" id="22G-z0-xAe"/>
+                                    <constraint firstAttribute="width" constant="200" id="lm3-4j-wUO"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Find on the map "/>
@@ -414,7 +414,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nBY-lL-ruK" firstAttribute="trailing" secondItem="Qhk-Ac-76g" secondAttribute="trailing" constant="30" id="3xp-lv-I6r"/>
-                            <constraint firstItem="oit-sh-A5A" firstAttribute="top" secondItem="sSs-we-gNI" secondAttribute="bottom" constant="40" id="Qh3-v6-ge4"/>
+                            <constraint firstItem="oit-sh-A5A" firstAttribute="top" secondItem="sSs-we-gNI" secondAttribute="bottom" constant="20" id="Qh3-v6-ge4"/>
                             <constraint firstItem="nBY-lL-ruK" firstAttribute="trailing" secondItem="sSs-we-gNI" secondAttribute="trailing" id="SE6-Wk-MIB"/>
                             <constraint firstItem="oit-sh-A5A" firstAttribute="centerX" secondItem="IY0-Gj-zSz" secondAttribute="centerX" id="SQj-7I-X9g"/>
                             <constraint firstItem="nBY-lL-ruK" firstAttribute="trailing" secondItem="Pyl-Rc-mRF" secondAttribute="trailing" constant="12" id="TvC-fZ-BKe"/>
@@ -525,6 +525,6 @@
         <image name="icons8-plus-80" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bFY-W1-9jv"/>
+        <segue reference="fvD-8I-6vi"/>
     </inferredMetricsTieBreakers>
 </document>
