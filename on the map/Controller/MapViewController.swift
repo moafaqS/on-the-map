@@ -9,34 +9,25 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController , MKMapViewDelegate{
+class MapViewController: LocationsArray , MKMapViewDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     
-    var stutendsLocation = [StudentInformation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        API.getStudentsLocation { (array, error) in
-            if error == nil{
-                self.setTheMap(array: array)
-            }else{
-            
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "failure", message: "The app failed to download student locations.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                    
-                }
-                
-            }
-        }
+        super.viewWillAppear(animated)
+        getStudentLocation()
+        
     }
     
-
+    override func refresh() {
+        self.setTheMap(array: stutendsLocation)
+    }
     
    
     @IBAction func logout(_ sender: Any) {

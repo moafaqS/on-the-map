@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T2l-XL-Wk2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,7 +61,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7fe-1V-S4q">
-                                <rect key="frame" x="194.5" y="604" width="25" height="25"/>
+                                <rect key="frame" x="194.5" y="384" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="XLo-qD-xdJ"/>
                                     <constraint firstAttribute="width" constant="25" id="mtz-p4-5f0"/>
@@ -72,9 +72,9 @@
                         <constraints>
                             <constraint firstItem="4vI-3e-d3L" firstAttribute="top" secondItem="whP-O6-Efj" secondAttribute="bottom" constant="40" id="CcR-Wm-0U7"/>
                             <constraint firstItem="4vI-3e-d3L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DWh-z5-f2b"/>
-                            <constraint firstItem="7fe-1V-S4q" firstAttribute="top" secondItem="6yz-ca-8Mx" secondAttribute="bottom" constant="20.5" id="Es1-kq-pAG"/>
                             <constraint firstItem="7fe-1V-S4q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jfe-l0-ta1"/>
                             <constraint firstItem="whP-O6-Efj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="Ncl-4r-4Gx"/>
+                            <constraint firstItem="7fe-1V-S4q" firstAttribute="top" secondItem="4vI-3e-d3L" secondAttribute="bottom" constant="6.5" id="Ono-Fl-8Q7"/>
                             <constraint firstItem="6yz-ca-8Mx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ZEf-UP-5cB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6yz-ca-8Mx" secondAttribute="trailing" constant="10" id="cwG-7g-Kb2"/>
                             <constraint firstItem="6yz-ca-8Mx" firstAttribute="top" secondItem="4vI-3e-d3L" secondAttribute="bottom" constant="40" id="iFB-gD-9lC"/>
@@ -525,6 +525,6 @@
         <image name="icons8-plus-80" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fvD-8I-6vi"/>
+        <segue reference="bFY-W1-9jv"/>
     </inferredMetricsTieBreakers>
 </document>

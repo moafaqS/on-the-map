@@ -74,7 +74,7 @@ class NewLocationMapViewController: UIViewController, MKMapViewDelegate , UIText
     @IBAction func submitPressed(_ sender: Any) {
      
         API.getUserData { (user, error) in
-            if user != nil{
+            if error == nil{
                 API.postStudentLocation(firstName: user!.firstName, lastName: user!.lastName, latitude:(self.selectedPin?.coordinate.latitude)!, longitude: (self.selectedPin?.coordinate.longitude)!, mapString: self.searchText, mediaURL: self.linkToShare.text!, uniqueKey: API.Auth.accountId, completion: { (done, error) in
                     
                     if(done){
