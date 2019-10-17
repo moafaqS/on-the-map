@@ -4,20 +4,13 @@
 
 ## Description 
 
-This app allows users to share their location and a URL with their fellow students.
+The Virtual Tourist app downloads and stores images from Flickr. The app allows users to drop pins on a map, as if they were stops on a tour. Users will then be able to download pictures for the location and persist both the pictures, and the association of the pictures with the pin.
 
 ## Installation
 ```bash
 git clone https://github.com/moafaqS/on-the-map.git
 ```
-## Screenshots
-<p align="center">
-<img src="https://raw.githubusercontent.com/moafaqS/on-the-map/master/screenshots/loginVC.png" width="320">
-<img src="https://raw.githubusercontent.com/moafaqS/on-the-map/master/screenshots/mapVC.png" width="320">
-<img src="https://raw.githubusercontent.com/moafaqS/on-the-map/master/screenshots/listVC.png" width="320">
-<img src="https://raw.githubusercontent.com/moafaqS/on-the-map/master/screenshots/findLocationVC.png" width="320">
-<img src="https://raw.githubusercontent.com/moafaqS/on-the-map/master/screenshots/addLinkVC.png" width="320">
-</p>
+
 
 
 
