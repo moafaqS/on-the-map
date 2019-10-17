@@ -8,7 +8,9 @@ The Virtual Tourist app downloads and stores images from Flickr. The app allows 
 
 ## Installation
 ```bash
+
 git clone https://github.com/moafaqS/on-the-map.git
+
 ```
 
 
